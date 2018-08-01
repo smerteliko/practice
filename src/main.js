@@ -108,8 +108,8 @@ function MyViewModel() {
                     +position.coords.latitude+"&lon="+
                     position.coords.longitude+
                     "&units=metric&APPID=65123116875e9604b8d5d5d14c59c5b8")
-                .success(function (data, msg) {
-                    console.log("WEATHER" + msg);
+                .success(function (data) {
+                    console.log("WEATHER success");
                     self.data.city(data.city.name);
                     self.data.temp(data.list[0].main.temp);
                     self.data.weather(data.list[0].weather[0].description);
