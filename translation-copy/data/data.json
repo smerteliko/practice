@@ -1,0 +1,20 @@
+{
+  "logs":[
+    {
+      "name": "somelog 1",
+      "info": "some blabla",
+      "status": "ok"
+    },
+    {
+      "name": "somelog 2",
+      "info": "more blabla",
+      "status": "bad"
+    },
+    {
+      "name": "somelog 3",
+      "info": "moooooorrrrreeeeeeee blabla",
+      "status": "ok"
+    }
+
+  ]
+}
