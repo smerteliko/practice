@@ -43,16 +43,22 @@
 					<label class="text"
 						   data-bind="text: name"></label>
 					&emsp;
-					<div class="form-group btn-group" role="group"
-						 aria-label="...">
+					<div class="form-group btn-group" role="group">
+						<div class="btn-group">
+						<button type="button"
+								class="btn btn-xs btn-default click dropdown-toggle"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false">Source <span class="caret"></span></button>
 
-						<button class=" btn btn-xs btn-default click"
-								type="button"
-								data-bind="click: oneContainer.selectedSource.bind(this,null)"
-								title="Disconnect"
-						>
-							<span class="glyphicon glyphicon-remove"></span>
-						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+						</div>
 						<button class="btn btn-xs btn-default click"
 								type="button"
 								data-bind="click: $root.reconnect"
@@ -60,14 +66,23 @@
 						>
 							<span class="glyphicon glyphicon-refresh"></span>
 						</button>
+						<button class=" btn btn-xs btn-default click"
+								type="button"
+								data-bind="click: oneContainer.selectedSource.bind(this,null)"
+								title="Disconnect"
+						>
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+
+
 					</div>
-					<select class="select input-xs"
-							data-bind="options: $root.getSources(),
-                                                    optionsCaption: 'select source',
-                                                    optionsText: 'label',
-                                                    optionsValue: 'stream',
-                                                    value: oneContainer.selectedSource">
-					</select>
+					<!--<select class="select input-xs"-->
+							<!--data-bind="options: $root.getSources(),-->
+                                                    <!--optionsCaption: 'select source',-->
+                                                    <!--optionsText: 'label',-->
+                                                    <!--optionsValue: 'stream',-->
+                                                    <!--value: oneContainer.selectedSource">-->
+					<!--</select>-->
 				</div>
 			</form>
             <div class="table-responsive" id="logTemplate"
