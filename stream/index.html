@@ -36,78 +36,68 @@
         </div>
         <!---->
         <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 custom-container">
-			<form class="row form-group button-container"
-				  data-bind="foreach: {data: getContainers(),as: 'oneContainer'}">
-				<div class="col-md-6 col-sm-12 col-xs-12 col-lg-4
+			<div class="white-bg">
+				<form class="row form-group button-container"
+					  data-bind="foreach: {data: getContainers(),as: 'oneContainer'}">
+					<div class="col-md-6 col-sm-12 col-xs-12 col-lg-4
                             form-group form-inline">
-					<label class="text"
-						   data-bind="text: name"></label>
-					&emsp;
-					<div class="form-group btn-group" role="group">
-						<div class="btn-group">
-						<button type="button"
-								class="btn btn-xs btn-default click dropdown-toggle"
-								data-toggle="dropdown"
-								aria-haspopup="true"
-								aria-expanded="false">Source <span class="caret"></span></button>
-
-						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-						</ul>
+						<div class="row">
+							<div class="col-xs-12">
+								<label class="text"
+									   data-bind="text: name"></label>
+							</div>
+							<div class="col-xs-12">
+								<select class="form-control input-sm"
+										data-bind="options: $root.getSources(),
+						optionsCaption: 'Select source...',
+						optionsText: 'label',
+						optionsValue: 'stream',
+						value: oneContainer.selectedSource">
+								</select>
+								<div class="form-group btn-group" role="group">
+									<button class="btn btn-xs btn-default click"
+											type="button"
+											data-bind="click: $root.reconnect"
+											title="Reconnect"
+									>
+										<span class="glyphicon glyphicon-refresh"></span>
+									</button>
+									<button class=" btn btn-xs btn-default click"
+											type="button"
+											data-bind="click: oneContainer.selectedSource.bind(this,null)"
+											title="Disconnect"
+									>
+										<span class="glyphicon glyphicon-remove"></span>
+									</button>
+								</div>
+							</div>
 						</div>
-						<button class="btn btn-xs btn-default click"
-								type="button"
-								data-bind="click: $root.reconnect"
-								title="Reconnect"
-						>
-							<span class="glyphicon glyphicon-refresh"></span>
-						</button>
-						<button class=" btn btn-xs btn-default click"
-								type="button"
-								data-bind="click: oneContainer.selectedSource.bind(this,null)"
-								title="Disconnect"
-						>
-							<span class="glyphicon glyphicon-remove"></span>
-						</button>
-
 
 					</div>
-					<!--<select class="select input-xs"-->
-							<!--data-bind="options: $root.getSources(),-->
-                                                    <!--optionsCaption: 'select source',-->
-                                                    <!--optionsText: 'label',-->
-                                                    <!--optionsValue: 'stream',-->
-                                                    <!--value: oneContainer.selectedSource">-->
-					<!--</select>-->
-				</div>
-			</form>
-            <div class="table-responsive" id="logTemplate"
-                 data-bind="component: {name: 'logVM',params: logData}">
-                <table class="table table-hover table-striped">
-					<thead>
-					<tr>
-						<th>Name</th>
-						<th>Description</th>
-						<th class="text-right">Code</th>
-					</tr>
-					</thead>
-					<tbody data-bind="foreach: {data : getLogs()}">
-                    <tr data-bind="css: {'' : status == 'ok',
+				</form>
+				<div class="table-responsive" id="logTemplate"
+					 data-bind="component: {name: 'logVM',params: logData}">
+					<table class="table table-hover ">
+						<thead>
+						<tr>
+							<th>Name</th>
+							<th>Description</th>
+							<th class="text-right">Code</th>
+						</tr>
+						</thead>
+						<tbody data-bind="foreach: {data : getLogs()}">
+						<tr data-bind="css: {'' : status == 'ok',
                                          danger: status == 'bad'}">
-                        <td data-bind="text: name"></td>
-                        <td data-bind="text: info"></td>
-                        <td class="text-right text-table"
-                            data-bind="text: status"></td>
-                    </tr>
-					</tbody>
-                </table>
-            </div>
-            <!---->
-
+							<td data-bind="text: name"></td>
+							<td data-bind="html: info"></td>
+							<td class="text-right text-table"
+								data-bind="text: status"></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<!---->
+			</div>
         </div>
     </div>
 </div>

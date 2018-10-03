@@ -14,6 +14,11 @@
       "name": "somelog 3",
       "info": "moooooorrrrreeeeeeee blabla",
       "status": "ok"
+    },
+    {
+      "name": "somelog 34",
+      "info": "moooooorrrrreeeeeeee blabla <br> test <br> test",
+      "status": "ok"
     }
 
   ]
