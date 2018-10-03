@@ -36,7 +36,9 @@
         </div>
         <!---->
         <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 custom-container">
-			<div class="white-bg">
+			<div class="panel panel-default">
+				<div class="panel-heading">Source control panel</div>
+				<div class="panel-body">
 				<form class="row form-group button-container"
 					  data-bind="foreach: {data: getContainers(),as: 'oneContainer'}">
 					<div class="col-md-6 col-sm-12 col-xs-12 col-lg-4
@@ -75,6 +77,7 @@
 
 					</div>
 				</form>
+					<h3>Logs:</h3>
 				<div class="table-responsive" id="logTemplate"
 					 data-bind="component: {name: 'logVM',params: logData}">
 					<table class="table table-hover ">
@@ -97,6 +100,7 @@
 					</table>
 				</div>
 				<!---->
+				</div>
 			</div>
         </div>
     </div>
