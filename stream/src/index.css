@@ -1,4 +1,4 @@
-html,body {
+html, body {
     height: 100%;
     width: 100%;
     margin: 0px auto;
@@ -7,37 +7,56 @@ html,body {
     background-size: cover;
 }
 
-.custom-container{
+.custom-container {
     height: 100%;
     width: 100%;
 }
+
 .container-row-top {
     height: 50%;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0;
 }
+
 .container-row-bottom {
-    margin-top: 2%;
-    height: 45%;
+    width: 100%;
+    height: 50%;
+    margin: 0 0 0 0;
+    padding: 0;
 }
 
 .container-1 {
+    margin: 0 0 0 0;
     height: 100%;
     border: none;
+    padding: 15px
 }
 
 .container-2 {
+    margin: 0 0 0 0;
     height: 100%;
     border: none;
+    padding: 15px
 }
 
 .container-3 {
+    margin: 0 0 0 0;
     height: 100%;
+    border: none;
+    padding: 15px;
 }
 
-.button-container{
-    margin-top: 5%;
+.data-container {
+    margin: 0 0 0 0;
+    padding: 15px;
+}
+
+.button-container {
+    margin-top: 2%;
     display: inline;
-    float: left;
     height: 100%;
+
 }
 
 .select {
@@ -72,10 +91,18 @@ html,body {
     color: silver;
 }
 
+.text-table {
+    color: black;
+}
+
+.border-dark {
+    border-color: black;
+}
+
 #logTemplate {
     margin-top: 3%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-right: 0;
 }

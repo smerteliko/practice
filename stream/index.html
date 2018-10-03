@@ -19,45 +19,49 @@
 </head>
 
 <body>
-<div class="container-fluid custom-container">
+<div class="container-fluid custom-container clearfix">
 
-    <div class="row container-row-top">
+    <div class="row container-fluid container-row-top">
         <div class="col-md-6 col-xs-12 col-lg-6 container-1">
             <div id="Window1"></div>
         </div>
-        <div class="col-md-6 col-xs-12 col-lg-6 container-2">
+        <div class="col-md-6  col-sm-12 col-xs-12 col-lg-6 container-2">
             <div id="Window2"></div>
         </div>
     </div>
 
-    <div class="row container-row-bottom">
-
-        <div class="col-md-6 col-xs-12 col-lg-6 container-3">
+    <div class="row container-fluid container-row-bottom">
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 container-3">
             <div id="Window3"></div>
         </div>
         <!---->
-        <div class="col-md-6">
-            <div class="table-responsive " id="logTemplate"
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 data-container">
+            <div class="table-responsive" id="logTemplate"
                  data-bind="component: {name: 'logVM',params: logData}">
-
-                <table class="text table table-bordered"
+                <table class="table table-bordered table-hover"
                        data-bind="foreach: {data : getLogs()}">
-                    <tr>
-                        <td class="text-left" data-bind="text: name"></td>
-                        <td class="text-center" data-bind="text: info"></td>
-                        <td class="text-right" data-bind="css: self.getStatus"></td>
+                    <tr data-bind="css: {success : status == 'ok',
+                                         danger: status == 'bad'}">
+                        <td class="text-left text-table"
+                            data-bind="text: name"></td>
+                        <td class="text-center text-table"
+                            data-bind="text: info"></td>
+                        <td class="text-right text-table"
+                            data-bind="text: status"></td>
                     </tr>
                 </table>
             </div>
-        <!---->
-            <form class="form-group button-container"
+            <!---->
+            <form class="row form-group button-container"
                   data-bind="foreach: {data: getContainers(),as: 'oneContainer'}">
-                <div class="form-group row">
-                    <label class="text text-uppercase col-md"
+                <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6
+                            form-group form-inline">
+                    <label class="text text-uppercase"
                            data-bind="text: name"></label>
                     &emsp;
-                    <div class="col-md btn-group" role="group" aria-label="...">
-                        <select class="select btn btn-xs btn-default"
+                    <div class="form-group btn-group" role="group"
+                         aria-label="...">
+                        <select class="select input-xs"
                                 data-bind="options: $root.getSources(),
                                                     optionsCaption: 'select source',
                                                     optionsText: 'label',
@@ -69,7 +73,6 @@
                                 data-bind="click: oneContainer.selectedSource.bind(this,null)">
                             Disconnect
                         </button>
-
                         <button class="btn btn-xs btn-default click"
                                 type="button"
                                 data-bind="click: $root.reconnect">Reconnect
